@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <i class="fa-solid fa-shield-halved logo-icon"></i>
+            <h1>Admin Panel</h1>
+        </div>
+        <nav>
+            <a href="index.html" class="admin-link">Registration Form</a>
+        </nav>
+    </header>
+
+    <main class="main-content admin-main">
+        <div class="admin-container">
+            <h2>Registered Users List</h2>
+            <div class="user-list-wrapper">
+                <table id="userTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Email Address</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userListBody">
+                        </tbody>
+                </table>
+                <p id="noUsersMessage" class="hidden">No users registered yet.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SecureApp. Admin View.</p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>

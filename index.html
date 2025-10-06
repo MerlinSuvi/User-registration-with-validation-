@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration - Secure App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <i class="fa-solid fa-rocket logo-icon"></i>
+            <h1>SecureApp</h1>
+        </div>
+        <nav>
+            <a href="admin.html" class="admin-link">Admin View</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="registration-container">
+            <h2>Create Your Account</h2>
+            <form id="registrationForm">
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="fullName" placeholder="Full Name" required>
+                    <span class="error-message" id="fullNameError"></span>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                    <span class="error-message" id="termsError"></span>
+                </div>
+
+                <button type="submit" id="submitBtn">Register</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SecureApp. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

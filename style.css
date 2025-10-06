@@ -1,0 +1,240 @@
+/* Custom Fonts and Global Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #007bff; /* Bright Blue */
+    --accent-color: #00c0ff; /* Light Cyan/Sky Blue */
+    --background-color: #e9ecef; /* Light gray background */
+    --error-color: #dc3545; /* Red for errors */
+    --header-bg: #2c3e50; /* Dark Slate Grey */
+}
+
+body {
+    background: linear-gradient(135deg, #e0f7fa, #b3e5fc); /* Light blue/cyan gradient */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header Styling --- */
+header {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    font-size: 28px;
+    color: var(--accent-color);
+    margin-right: 10px;
+    animation: pulse 2s infinite ease-in-out; /* Pulsing Logo Animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.admin-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.admin-link:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--header-bg);
+}
+
+/* --- Main Content Layout --- */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* --- Registration Card Styling --- */
+.registration-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    animation: slideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth Slide-In Animation */
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Input Group Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 30px; /* Increased margin for better spacing */
+}
+
+.input-group i {
+    /* ... (Icon styling remains similar) ... */
+    transition: transform 0.3s ease;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Stronger focus animation */
+}
+
+.input-group:focus-within i {
+    color: var(--primary-color);
+    transform: translateY(-50%) scale(1.1); /* Icon animation on focus */
+}
+
+/* Validation Feedback & Error Messages */
+/* (Error styles remain similar) */
+
+.error-message {
+    /* ... (Error message styles remain similar) ... */
+    height: 18px; /* Slightly more space */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother error transition */
+}
+
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: scale(1.02); /* Pop animation on hover */
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+}
+
+/* --- Footer Styling --- */
+footer {
+    background-color: var(--header-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Admin Panel Styling --- */
+.admin-main {
+    align-items: flex-start; /* Align content to the top */
+}
+
+.admin-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.user-list-wrapper {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+#userTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#userTable th, #userTable td {
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+#userTable thead th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+#userTable tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+#userTable tbody tr:hover {
+    background-color: #e9f5ff; /* Subtle hover animation for rows */
+    cursor: pointer;
+}
+
+#noUsersMessage {
+    color: #6c757d;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
